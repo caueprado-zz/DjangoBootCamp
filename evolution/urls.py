@@ -19,7 +19,7 @@ from django.contrib import admin
 from evolution_app import views
 
 urlpatterns = [
-    url(r'^hello/', views.index, name='index'),
+    url(r'^$/', views.index, name='index'),
     url(r'^help/', views.help, name='help'),
     url(r'^admin/', admin.site.urls),
     url(r'^login/', views.login, name ='login'),

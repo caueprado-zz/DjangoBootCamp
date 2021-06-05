@@ -85,10 +85,10 @@ WSGI_APPLICATION = 'evolution.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django',
+        'NAME': 'postgres',
         'USER': 'admin',
         'PASSWORD': 'admin',
-        'HOST': '172.23.0.2',
+        'HOST': '172.28.0.2',
         'PORT': '5432',
     }
 }

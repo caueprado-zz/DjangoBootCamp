@@ -12,13 +12,30 @@
   </head>
   <body>
     <div class="container">
-        <h1>Please sign up!</h1>
-        <form method="post">
-            {{ form.as_p }}
+        <section class="mb-4">
+            <!--Section heading-->
+            <h2 class="h1-responsive font-weight-bold text-center my-4">Cadastro</h2>
+            <!--Section description-->
+            <p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
+                a matter of hours to help you.</p>
+                <form method="post">
 
-            {% csrf_token %}
-            <input type="submit" class="btn btn-primary" value="Submit">
-        </form>
+                    <!--Grid column-->
+                    <div class="col-md-6">
+                        <div class="md-form mb-0">
+                             {{ form.nome }}
+                            <label for="email" class="">Your email</label>
+                        </div>
+                    </div>
+                    <!--Grid column-->
+
+                                                 {{ form.as_p }}
+
+
+                    {% csrf_token %}
+                    <input type="submit" class="btn btn-primary" value="Submit">
+                </form>
+        </section>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

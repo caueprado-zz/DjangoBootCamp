@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from evolution_app.models import Topic, Webpage, AccessRecord
+from evolution_app.models import Cliente
 from evolution_app.forms import Login, NewUser, FormName
 
 
@@ -14,7 +14,7 @@ def test(request):
 
 
 def help(request):
-    wpg_list = AccessRecord.objects.order_by('date')
+    wpg_list = Cliente.objects.order_by('nome')
     wpg_dict = {'access_record': wpg_list}
     return render(request, 'help.html', context=wpg_dict)
 
@@ -28,17 +28,20 @@ def new_user(request):
     user = NewUser()
     if request.method == "POST":
         user = NewUser(request.POST)
-
         if user.is_valid():
             user.save(commit=True)
             return index(request)
         else:
             print('ERROR')
-    return render(request, 'user_signup.html', {"user": user})
+    return render(request,
+                  'cadastro.html',
+                  {"form": user}
+                  )
 
 
 def form(request):
     form = FormName()
+
     if request.method == 'POST':
         form = FormName(request.POST)
 
